@@ -524,7 +524,7 @@ typedef NS_OPTIONS(NSInteger, QHDDLogMessageOptions) {
     // Direct accessors to be used only for performance
     @public
     id <QHDDLogFormatter> _qh_logFormatter;
-    dispatch_queue_t _qh_qh_loggerQueue;
+    dispatch_queue_t _qh_loggerQueue;
 }
 
 @property (nonatomic, strong) id <QHDDLogFormatter> logFormatter;

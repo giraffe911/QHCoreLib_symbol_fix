@@ -143,12 +143,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UIDevice-Hardware/UIDevice_Hardware.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UIDevice-Hardware/UIDevice_Hardware.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework"
 fi
