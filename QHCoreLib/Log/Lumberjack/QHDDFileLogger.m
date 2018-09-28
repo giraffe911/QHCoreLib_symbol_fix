@@ -1032,8 +1032,8 @@ static int exception_count = 0;
     NSString *message = logMessage->_message;
     BOOL isFormatted = NO;
 
-    if (_logFormatter) {
-        message = [_logFormatter formatLogMessage:logMessage];
+    if (_qh_logFormatter) {
+        message = [_qh_logFormatter formatLogMessage:logMessage];
         isFormatted = message != logMessage->_message;
     }
 

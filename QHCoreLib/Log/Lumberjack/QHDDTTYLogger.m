@@ -1155,8 +1155,8 @@ static QHDDTTYLogger *sharedInstance;
     NSString *logMsg = logMessage->_message;
     BOOL isFormatted = NO;
 
-    if (_logFormatter) {
-        logMsg = [_logFormatter formatLogMessage:logMessage];
+    if (_qh_logFormatter) {
+        logMsg = [_qh_logFormatter formatLogMessage:logMessage];
         isFormatted = logMsg != logMessage->_message;
     }
 

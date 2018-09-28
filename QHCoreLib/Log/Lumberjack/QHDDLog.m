@@ -73,7 +73,7 @@ static void *const GlobalLoggingQueueIdentityKey = (void *)&GlobalLoggingQueueId
     @public
     id <QHDDLogger> _logger;
     QHDDLogLevel _level;
-    dispatch_queue_t _loggerQueue;
+    dispatch_queue_t _qh_loggerQueue;
 }
 
 @property (nonatomic, readonly) id <QHDDLogger> logger;
@@ -591,7 +591,7 @@ static NSUInteger _numProcessors;
     [_loggers addObject:loggerNode];
 
     if ([logger respondsToSelector:@selector(didaddLogger)]) {
-        dispatch_async(loggerNode->_loggerQueue, ^{ @autoreleasepool {
+        dispatch_async(loggerNode->_qh_loggerQueue, ^{ @autoreleasepool {
             [logger didaddLogger];
         } });
     }
@@ -619,7 +619,7 @@ static NSUInteger _numProcessors;
     
     // Notify logger
     if ([logger respondsToSelector:@selector(willRemoveLogger)]) {
-        dispatch_async(loggerNode->_loggerQueue, ^{ @autoreleasepool {
+        dispatch_async(loggerNode->_qh_loggerQueue, ^{ @autoreleasepool {
             [logger willRemoveLogger];
         } });
     }
@@ -635,7 +635,7 @@ static NSUInteger _numProcessors;
     // Notify all loggers
     for (QHDDLoggerNode *loggerNode in _loggers) {
         if ([loggerNode->_logger respondsToSelector:@selector(willRemoveLogger)]) {
-            dispatch_async(loggerNode->_loggerQueue, ^{ @autoreleasepool {
+            dispatch_async(loggerNode->_qh_loggerQueue, ^{ @autoreleasepool {
                 [loggerNode->_logger willRemoveLogger];
             } });
         }
@@ -680,7 +680,7 @@ static NSUInteger _numProcessors;
                 continue;
             }
             
-            dispatch_group_async(_loggingGroup, loggerNode->_loggerQueue, ^{ @autoreleasepool {
+            dispatch_group_async(_loggingGroup, loggerNode->_qh_loggerQueue, ^{ @autoreleasepool {
                 [loggerNode->_logger logMessage:logMessage];
             } });
         }
@@ -696,7 +696,7 @@ static NSUInteger _numProcessors;
                 continue;
             }
             
-            dispatch_sync(loggerNode->_loggerQueue, ^{ @autoreleasepool {
+            dispatch_sync(loggerNode->_qh_loggerQueue, ^{ @autoreleasepool {
                 [loggerNode->_logger logMessage:logMessage];
             } });
         }
@@ -730,7 +730,7 @@ static NSUInteger _numProcessors;
     
     for (QHDDLoggerNode *loggerNode in _loggers) {
         if ([loggerNode->_logger respondsToSelector:@selector(flush)]) {
-            dispatch_group_async(_loggingGroup, loggerNode->_loggerQueue, ^{ @autoreleasepool {
+            dispatch_group_async(_loggingGroup, loggerNode->_qh_loggerQueue, ^{ @autoreleasepool {
                 [loggerNode->_logger flush];
             } });
         }
@@ -817,7 +817,7 @@ NSString * QHDDExtractFileNameWithoutExtension(const char *filePath, BOOL copy) 
         _logger = logger;
 
         if (loggerQueue) {
-            _loggerQueue = loggerQueue;
+            _qh_loggerQueue = loggerQueue;
             #if !OS_OBJECT_USE_OBJC
             dispatch_retain(loggerQueue);
             #endif
@@ -834,8 +834,8 @@ NSString * QHDDExtractFileNameWithoutExtension(const char *filePath, BOOL copy) 
 
 - (void)dealloc {
     #if !OS_OBJECT_USE_OBJC
-    if (_loggerQueue) {
-        dispatch_release(_loggerQueue);
+    if (_qh_loggerQueue) {
+        dispatch_release(_qh_loggerQueue);
     }
     #endif
 }
@@ -981,7 +981,7 @@ NSString * QHDDExtractFileNameWithoutExtension(const char *filePath, BOOL copy) 
             loggerQueueName = [[self loggerName] UTF8String];
         }
 
-        _loggerQueue = dispatch_queue_create(loggerQueueName, NULL);
+        _qh_loggerQueue = dispatch_queue_create(loggerQueueName, NULL);
 
         // We're going to use dispatch_queue_set_specific() to "mark" our loggerQueue.
         // Later we can use dispatch_get_specific() to determine if we're executing on our loggerQueue.
@@ -1000,7 +1000,7 @@ NSString * QHDDExtractFileNameWithoutExtension(const char *filePath, BOOL copy) 
         void *key = (__bridge void *)self;
         void *nonNullValue = (__bridge void *)self;
 
-        dispatch_queue_set_specific(_loggerQueue, key, nonNullValue, NULL);
+        dispatch_queue_set_specific(_qh_loggerQueue, key, nonNullValue, NULL);
     }
 
     return self;
@@ -1009,8 +1009,8 @@ NSString * QHDDExtractFileNameWithoutExtension(const char *filePath, BOOL copy) 
 - (void)dealloc {
     #if !OS_OBJECT_USE_OBJC
 
-    if (_loggerQueue) {
-        dispatch_release(_loggerQueue);
+    if (_qh_loggerQueue) {
+        dispatch_release(_qh_loggerQueue);
     }
 
     #endif
@@ -1078,8 +1078,8 @@ NSString * QHDDExtractFileNameWithoutExtension(const char *filePath, BOOL copy) 
     __block id <QHDDLogFormatter> result;
 
     dispatch_sync(globalLoggingQueue, ^{
-        dispatch_sync(_loggerQueue, ^{
-            result = _logFormatter;
+        dispatch_sync(_qh_loggerQueue, ^{
+            result = _qh_logFormatter;
         });
     });
 
@@ -1094,15 +1094,15 @@ NSString * QHDDExtractFileNameWithoutExtension(const char *filePath, BOOL copy) 
 
     dispatch_block_t block = ^{
         @autoreleasepool {
-            if (_logFormatter != logFormatter) {
-                if ([_logFormatter respondsToSelector:@selector(willRemoveFromLogger:)]) {
-                    [_logFormatter willRemoveFromLogger:self];
+            if (_qh_logFormatter != logFormatter) {
+                if ([_qh_logFormatter respondsToSelector:@selector(willRemoveFromLogger:)]) {
+                    [_qh_logFormatter willRemoveFromLogger:self];
                 }
 
-                _logFormatter = logFormatter;
+                _qh_logFormatter = logFormatter;
 
-                if ([_logFormatter respondsToSelector:@selector(didAddToLogger:)]) {
-                    [_logFormatter didAddToLogger:self];
+                if ([_qh_logFormatter respondsToSelector:@selector(didAddToLogger:)]) {
+                    [_qh_logFormatter didAddToLogger:self];
                 }
             }
         }
@@ -1111,12 +1111,12 @@ NSString * QHDDExtractFileNameWithoutExtension(const char *filePath, BOOL copy) 
     dispatch_queue_t globalLoggingQueue = [QHDDLog loggingQueue];
 
     dispatch_async(globalLoggingQueue, ^{
-        dispatch_async(_loggerQueue, block);
+        dispatch_async(_qh_loggerQueue, block);
     });
 }
 
 - (dispatch_queue_t)loggerQueue {
-    return _loggerQueue;
+    return _qh_loggerQueue;
 }
 
 - (NSString *)loggerName {
