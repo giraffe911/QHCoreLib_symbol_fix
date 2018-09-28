@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05EC4D91CE3F0DBD7B498EBF /* libPods-QHCoreLibDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B683457CC3EDB2669B3F4420 /* libPods-QHCoreLibDemo.a */; };
-		09FF27FB9EFDFAD9EDB2B7EA /* libPods-QHCoreLibTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE90E7F5F0F0A61EA1C31EB /* libPods-QHCoreLibTests.a */; };
-		C4958CD2924233A641AE7A87 /* libPods-QHCoreLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A84FD14D14130B78EE8A707 /* libPods-QHCoreLib.a */; };
+		96616EE0C40A6B8F61C5F1B2 /* Pods_QHCoreLibDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 176F44247D14FDEC7800509A /* Pods_QHCoreLibDemo.framework */; };
+		DFD48A64480C177B8A2CD234 /* Pods_QHCoreLibTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40881190F5C4F2946DF72B4D /* Pods_QHCoreLibTests.framework */; };
+		E5E159336E827278396C58FF /* Pods_QHCoreLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512B44BA19D262450438E687 /* Pods_QHCoreLib.framework */; };
 		EA0BF9991F94BBD400BC443E /* QHWeakWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = EA0BF9971F94BBD400BC443E /* QHWeakWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA0BF99A1F94BBD400BC443E /* QHWeakWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0BF9981F94BBD400BC443E /* QHWeakWrapper.m */; };
 		EA0BF99C1F94BED800BC443E /* QHCoreLibWeakWrapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0BF99B1F94BED800BC443E /* QHCoreLibWeakWrapperTests.m */; };
@@ -194,13 +194,14 @@
 
 /* Begin PBXFileReference section */
 		0BF5B35E29ACCBA6610B6542 /* Pods-QHCoreLibTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QHCoreLibTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QHCoreLibTests/Pods-QHCoreLibTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4A84FD14D14130B78EE8A707 /* libPods-QHCoreLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QHCoreLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		176F44247D14FDEC7800509A /* Pods_QHCoreLibDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QHCoreLibDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40881190F5C4F2946DF72B4D /* Pods_QHCoreLibTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QHCoreLibTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		512B44BA19D262450438E687 /* Pods_QHCoreLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QHCoreLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67860B926A0249452170C2C2 /* Pods-QHCoreLibDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QHCoreLibDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QHCoreLibDemo/Pods-QHCoreLibDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7851078F08662E6B8192606E /* Pods-QHCoreLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QHCoreLib.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QHCoreLib/Pods-QHCoreLib.debug.xcconfig"; sourceTree = "<group>"; };
 		938ABA409DE2D52EBFB8B765 /* Pods-QHCoreLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QHCoreLib.release.xcconfig"; path = "Pods/Target Support Files/Pods-QHCoreLib/Pods-QHCoreLib.release.xcconfig"; sourceTree = "<group>"; };
 		A4FB93821E521314C7F610C2 /* Pods-QHCoreLibTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QHCoreLibTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QHCoreLibTests/Pods-QHCoreLibTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA072A9E1A6E88CFE69846DB /* Pods-QHCoreLibDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QHCoreLibDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-QHCoreLibDemo/Pods-QHCoreLibDemo.release.xcconfig"; sourceTree = "<group>"; };
-		B683457CC3EDB2669B3F4420 /* libPods-QHCoreLibDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QHCoreLibDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0BF9971F94BBD400BC443E /* QHWeakWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QHWeakWrapper.h; sourceTree = "<group>"; };
 		EA0BF9981F94BBD400BC443E /* QHWeakWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QHWeakWrapper.m; sourceTree = "<group>"; };
 		EA0BF99B1F94BED800BC443E /* QHCoreLibWeakWrapperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QHCoreLibWeakWrapperTests.m; sourceTree = "<group>"; };
@@ -368,7 +369,6 @@
 		EAE3C7A31EE12A4F00A93456 /* QHLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QHLog.h; sourceTree = "<group>"; };
 		EAE690F71F7796AD00A097D4 /* CGFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGFunctions.h; sourceTree = "<group>"; };
 		EAE690F81F7796AD00A097D4 /* CGFunctions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGFunctions.m; sourceTree = "<group>"; };
-		FAE90E7F5F0F0A61EA1C31EB /* libPods-QHCoreLibTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QHCoreLibTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,7 +376,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4958CD2924233A641AE7A87 /* libPods-QHCoreLib.a in Frameworks */,
+				E5E159336E827278396C58FF /* Pods_QHCoreLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAAE57671ED973850084FA69 /* QHCoreLib.framework in Frameworks */,
-				09FF27FB9EFDFAD9EDB2B7EA /* libPods-QHCoreLibTests.a in Frameworks */,
+				DFD48A64480C177B8A2CD234 /* Pods_QHCoreLibTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +395,7 @@
 			files = (
 				EADE977C1FFC7EFC0064F2C6 /* CFNetwork.framework in Frameworks */,
 				EA5F5AC21F5D51C300013F8F /* QHCoreLib.framework in Frameworks */,
-				05EC4D91CE3F0DBD7B498EBF /* libPods-QHCoreLibDemo.a in Frameworks */,
+				96616EE0C40A6B8F61C5F1B2 /* Pods_QHCoreLibDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,9 +406,9 @@
 			isa = PBXGroup;
 			children = (
 				EADE977B1FFC7EFC0064F2C6 /* CFNetwork.framework */,
-				4A84FD14D14130B78EE8A707 /* libPods-QHCoreLib.a */,
-				B683457CC3EDB2669B3F4420 /* libPods-QHCoreLibDemo.a */,
-				FAE90E7F5F0F0A61EA1C31EB /* libPods-QHCoreLibTests.a */,
+				512B44BA19D262450438E687 /* Pods_QHCoreLib.framework */,
+				176F44247D14FDEC7800509A /* Pods_QHCoreLibDemo.framework */,
+				40881190F5C4F2946DF72B4D /* Pods_QHCoreLibTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -963,6 +963,7 @@
 				EA1D42FB1ED70BA2002177BF /* Sources */,
 				EA1D42FC1ED70BA2002177BF /* Frameworks */,
 				EA1D42FD1ED70BA2002177BF /* Resources */,
+				EC695B82BAB31442930BDE99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -983,6 +984,7 @@
 				EA5F5AA51F5D519E00013F8F /* Frameworks */,
 				EA5F5AA61F5D519E00013F8F /* Resources */,
 				EA5F5AC61F5D51C300013F8F /* Embed Frameworks */,
+				D2BCC9D50009AAC53AD2D969 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1119,6 +1121,46 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2BCC9D50009AAC53AD2D969 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QHCoreLibDemo/Pods-QHCoreLibDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/UIDevice-Hardware/UIDevice_Hardware.framework",
+				"${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDevice_Hardware.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libextobjc.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QHCoreLibDemo/Pods-QHCoreLibDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC695B82BAB31442930BDE99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QHCoreLibTests/Pods-QHCoreLibTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/UIDevice-Hardware/UIDevice_Hardware.framework",
+				"${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDevice_Hardware.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libextobjc.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QHCoreLibTests/Pods-QHCoreLibTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
