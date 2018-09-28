@@ -40,7 +40,7 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
-  - UIDevice-Hardware (0.1.10)
+  - UIDevice-Hardware (0.1.11)
 
 DEPENDENCIES:
   - CocoaLumberjack
@@ -56,8 +56,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
-  UIDevice-Hardware: 4bb15b9bd9878762ab879ac86185baad17b6c3ff
+  UIDevice-Hardware: 72b0ea097ed0b239fe88073e2b9ac0b18f75bc05
 
 PODFILE CHECKSUM: 6081f6963c1629700e376266ea4bd108a80f3ac4
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3

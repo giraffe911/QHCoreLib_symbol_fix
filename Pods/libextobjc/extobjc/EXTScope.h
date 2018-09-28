@@ -88,7 +88,7 @@
     _Pragma("clang diagnostic pop")
 
 /*** implementation details follow ***/
-typedef void (^ext_cleanupBlock_t)(void);
+typedef void (^ext_cleanupBlock_t)();
 
 void ext_executeCleanupBlock (__strong ext_cleanupBlock_t *block);
 
