@@ -9,7 +9,7 @@ target 'QHCoreLib' do
   pod "libextobjc", '0.4.1'
   pod "UIDevice-Hardware"
 
-#  pod "CocoaLumberjack"
+  pod "CocoaLumberjack"
 
   target 'QHCoreLibTests' do
     inherit! :search_paths
@@ -18,5 +18,5 @@ target 'QHCoreLib' do
 end
 
 target 'QHCoreLibDemo' do
-  pod "CocoaLumberjack"
+  #pod "CocoaLumberjack"
 end
